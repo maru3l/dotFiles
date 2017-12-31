@@ -5,18 +5,19 @@ cd "$(dirname "${BASH_SOURCE}")";
 git pull origin master;
 
 function doIt() {
-	# rsync --exclude ".git/" \
-	# 	--exclude ".DS_Store" \
-	# 	--exclude ".osx" \
-	# 	--exclude ".zshrc" \
-	# 	--exclude "apm.sh" \
-	# 	--exclude "brew.sh" \
-	# 	--exclude "install.sh" \
-	# 	--exclude "install_old.sh" \
-	# 	--exclude "npm.sh" \
-	# 	--exclude "README.md" \
-	# 	-avh --no-perms . ~;
-	# source ~/.bash_profile;
+	rsync --exclude ".git/" \
+		--exclude ".DS_Store" \
+		--exclude ".osx" \
+		--exclude ".zshrc" \
+		--exclude "apm.sh" \
+		--exclude "brew.sh" \
+		--exclude "install.sh" \
+		--exclude "install.sh.bak" \
+		--exclude "npm.sh" \
+		--exclude "LICENCE" \
+		--exclude "README.md" \
+		-avh --no-perms . ~;
+	source ~/.bash_profile;
 	pwd;
 }
 
