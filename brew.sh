@@ -55,7 +55,7 @@ casks=(
   slack
   spectacle
   the-unarchiver
-  toggldesktop
+  toggl
   tower
   transmission
   vagrant
