@@ -1,0 +1,91 @@
+"*":
+  "atom-autocomplete-php": {}
+  "atom-beautify":
+    general:
+      _analyticsUserId: "8f781027-06e7-4149-b765-0d162110b01b"
+    html: {}
+  "atom-clock": {}
+  "atom-ctags": {}
+  "atom-package-deps":
+    ignored: []
+  "atom-ternjs":
+    inlineFnCompletionDocumentation: true
+    snippetsFirst: true
+    useSnippets: true
+    useSnippetsAndFunction: true
+  core:
+    allowPendingPaneItems: false
+    closeDeletedFileTabs: true
+    projectHome: "/Users/maruel/Sites"
+    telemetryConsent: "limited"
+    themes: [
+      "nucleus-dark-ui"
+      "atom-dark-fusion-syntax"
+    ]
+    titleBar: "custom"
+  devunity:
+    apikey: "anonymous"
+  docblockr:
+    development_mode: true
+    extra_tags: [
+      "@autor: @maru3l"
+    ]
+    param_description: false
+    return_description: false
+    short_primitives: true
+  editor:
+    fontFamily: "Roboto Mono"
+    invisibles: {}
+    lineHeight: 2
+    showIndentGuide: true
+    tabType: "soft"
+  "exception-reporting":
+    userId: "f2dde8fc-4718-5c69-7ead-d5c208353f95"
+  "fuzzy-finder":
+    ignoredNames: [
+      "node_modules/*"
+      "*vendor*"
+    ]
+  "gcc-make-run": {}
+  "git-diff":
+    showIconsInEditorGutter: true
+  linter: {}
+  "linter-eslint":
+    globalNodePath: "/usr/local"
+    lintHtmlFiles: true
+  "linter-php":
+    executablePath: "/usr/local/bin/php"
+  "linter-sass-lint":
+    globalNodePath: "/usr/local"
+    noConfigDisable: true
+  "linter-scss-lint": {}
+  "linter-ui-default":
+    hidePanelWhenEmpty: true
+    panelHeight: 459.75
+    showPanel: true
+    showProviderName: true
+  minimap:
+    plugins:
+      "git-diff": true
+      "git-diffDecorationsZIndex": 0
+  "nord-atom-ui":
+    darkerFormFocusEffect: true
+  "one-dark-ui":
+    tabSizing: "Even"
+  pigments:
+    markerType: "native-dot"
+    mergeColorDuplicates: true
+  "project-manager":
+    sortBy: "group"
+  "todo-show": {}
+  "tree-view":
+    hideIgnoredNames: true
+  welcome:
+    showOnStartup: false
+".blade.html.php.text":
+  editor:
+    commentEnd: " --}}"
+    commentStart: "{{-- "
+".sass.source":
+  editor:
+    autoIndentOnPaste: true

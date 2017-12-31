@@ -1,0 +1,39 @@
+#!/usr/bin/env bash
+
+# Set as admin
+
+sudo -v
+
+# Get current dir
+
+export DOTFILES_DIR EXTRA_DIR
+DOTFILES_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
+
+# Package managers & packages
+
+source "$DOTFILES_DIR/brew.sh"
+source "$DOTFILES_DIR/brew-cask.sh"
+source "$DOTFILES_DIR/npm.sh"
+
+# GIT configuration
+
+ln -sfv "$DOTFILES_DIR/.gitconfig" ~
+ln -sfv "$DOTFILES_DIR/.gitignore" ~
+
+# Mac configuration
+
+source "$DOTFILES_DIR/macos.sh"
+
+# Atom configuration
+
+source "$DOTFILES_DIR/atom/apm.sh"
+rm -f ~/.atom/config.cson ~/.atom/keymap.cson ~/.atom/snippets.cson ~/.atom/style.less
+ln -sfv "$DOTFILES_DIR/atom/config.cson" ~/.atom/
+ln -sfv "$DOTFILES_DIR/atom/keymap.cson" ~/.atom/
+ln -sfv "$DOTFILES_DIR/atom/snippets.cson" ~/.atom/
+ln -sfv "$DOTFILES_DIR/atom/style.less" ~/.atom/
+
+# Zsh
+
+ln -sfv "$DOTFILES_DIR/zsh/zshrc" ~/.zshrc
+ln -sfv "$DOTFILES_DIR/zsh/aliases" ~/.aliases

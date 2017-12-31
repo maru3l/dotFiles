@@ -1,0 +1,108 @@
+#!/usr/bin/env bash
+
+sudo -v
+
+###############################################################################
+# Trackpad, mouse, keyboard, Bluetooth accessories, and input                 #
+###############################################################################
+
+# Disable press-and-hold for keys in favor of key repeat
+defaults write NSGlobalDomain ApplePressAndHoldEnabled -bool false
+
+# Set a blazingly fast keyboard repeat rate
+defaults write NSGlobalDomain KeyRepeat -int 1
+
+# Set a blazingly fast keyboard repeat rate
+defaults write NSGlobalDomain InitialKeyRepeat -int 10
+
+# Set mouse speed
+defaults write NSGlobalDomain com.apple.mouse.scaling -int 3
+
+# Set left clic
+defaults write com.apple.AppleMultitouchMouse MouseButtonMode -string "TwoButton"
+defaults write com.apple.driver.AppleBluetoothMultitouch.mouse MouseButtonMode -string "TwoButton"
+
+
+###############################################################################
+# Finder                                                                      #
+###############################################################################
+
+# Disable the warning when changing a file extension
+defaults write com.apple.finder FXEnableExtensionChangeWarning -bool false
+
+# Avoid creating .DS_Store files on network volumes
+defaults write com.apple.desktopservices DSDontWriteNetworkStores -bool true
+
+# Avoid creating .DS_Store files on network volumes
+defaults write com.apple.desktopservices NewWindowTargetPath -string "file:///Users/maruel/"
+
+# Disable the warning when changing a file extension
+defaults write com.apple.sidebarlists ShowEjectables -bool false
+
+# Set default folder presentation by column
+defaults write com.apple.finder FXPreferredViewStyle -string "clmv"
+
+
+###############################################################################
+# Dock, Dashboard, and hot corners                                            #
+###############################################################################
+
+#Darkmode
+defaults write NSGlobalDomain AppleInterfaceTheme Dark
+defaults write NSGlobalDomain AppleInterfaceStyle Dark
+
+#User switcher menu Bar
+defaults write NSGlobalDomain NSPersonNameDefaultShortNameFormat -int 0
+defaults write NSGlobalDomain NSPersonNameDefaultDisplayNameOrder -int 0
+
+# Set the icon size of Dock items
+defaults write com.apple.dock tilesize -int 50
+
+# Change minimize/maximize window effect
+defaults write com.apple.dock mineffect -string "scale"
+
+# Minimize windows into their application’s icon
+defaults write com.apple.dock minimize-to-application -bool true
+
+# Wipe all app icons from the Dock
+defaults write com.apple.dock persistent-apps -array
+
+# Wipe all app icons from the Dock
+defaults write com.apple.dock persistent-other -array
+
+# Don’t automatically rearrange Spaces based on most recent use
+defaults write com.apple.dock mru-spaces -bool false
+
+# Automatically hide and show the Dock
+defaults write com.apple.dock autohide -bool true
+
+# Add iOS Simulator to Launchpad
+sudo ln -sf "/Applications/Xcode.app/Contents/Developer/Applications/iOS Simulator.app" "/Applications/iOS Simulator.app"
+
+
+###############################################################################
+# Safari                                                                      #
+###############################################################################
+
+# Enable the Develop menu and the Web Inspector in Safari
+defaults write com.apple.Safari IncludeDevelopMenu -bool true
+defaults write com.apple.Safari WebKitDeveloperExtrasEnabledPreferenceKey -bool true
+defaults write com.apple.Safari com.apple.Safari.ContentPageGroupIdentifier.WebKit2DeveloperExtrasEnabled -bool true
+
+# Add a context menu item for showing the Web Inspector in web views
+defaults write NSGlobalDomain WebKitDeveloperExtras -bool true
+
+# Configure DuckDuckGo as main search engine
+defaults write NSGlobalDomain NSPreferredWebServices.NSWebServicesProviderWebSearch.NSDefaultDisplayName -string "DuckDuckGo"
+defaults write NSGlobalDomain NSPreferredWebServices.NSWebServicesProviderWebSearch.NSProviderIdentifier -string "com.duckduckgo"
+
+###############################################################################
+# Time Machine                                                                #
+###############################################################################
+
+# Prevent Time Machine from prompting to use new hard drives as backup volume
+defaults write com.apple.TimeMachine DoNotOfferNewDisksForBackup -bool true
+
+for app in "cfprefsd" "Dock" "Finder" "Safari" "SystemUIServer"; do
+	killall "${app}" > /dev/null 2>&1
+done
