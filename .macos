@@ -1,6 +1,14 @@
 #!/usr/bin/env bash
 
+# Close any open System Preferences panes, to prevent them from overriding
+# settings we’re about to change
+osascript -e 'tell application "System Preferences" to quit'
+
+# Ask for the administrator password upfront
 sudo -v
+
+# Keep-alive: update existing `sudo` time stamp until `.macos` has finished
+while true; do sudo -n true; sleep 60; kill -0 "$$" || exit; done 2>/dev/null &
 
 ###############################################################################
 # Trackpad, mouse, keyboard, Bluetooth accessories, and input                 #
@@ -11,8 +19,6 @@ defaults write NSGlobalDomain ApplePressAndHoldEnabled -bool false
 
 # Set a blazingly fast keyboard repeat rate
 defaults write NSGlobalDomain KeyRepeat -int 1
-
-# Set a blazingly fast keyboard repeat rate
 defaults write NSGlobalDomain InitialKeyRepeat -int 10
 
 # Set mouse speed
@@ -21,7 +27,6 @@ defaults write NSGlobalDomain com.apple.mouse.scaling -int 3
 # Set left clic
 defaults write com.apple.AppleMultitouchMouse MouseButtonMode -string "TwoButton"
 defaults write com.apple.driver.AppleBluetoothMultitouch.mouse MouseButtonMode -string "TwoButton"
-
 
 ###############################################################################
 # Finder                                                                      #
@@ -46,14 +51,6 @@ defaults write com.apple.finder FXPreferredViewStyle -string "clmv"
 ###############################################################################
 # Dock, Dashboard, and hot corners                                            #
 ###############################################################################
-
-#Darkmode
-defaults write NSGlobalDomain AppleInterfaceTheme Dark
-defaults write NSGlobalDomain AppleInterfaceStyle Dark
-
-#User switcher menu Bar
-defaults write NSGlobalDomain NSPersonNameDefaultShortNameFormat -int 0
-defaults write NSGlobalDomain NSPersonNameDefaultDisplayNameOrder -int 0
 
 # Set the icon size of Dock items
 defaults write com.apple.dock tilesize -int 50
