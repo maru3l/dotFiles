@@ -14,7 +14,7 @@ function doIt() {
 		--exclude "install.sh" \
 		--exclude "install.sh.bak" \
 		--exclude "npm.sh" \
-		--exclude "LICENCE" \
+		--exclude "LICENSE" \
 		--exclude "README.md" \
 		-avh --no-perms . ~;
 	source ~/.bash_profile;
