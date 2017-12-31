@@ -58,9 +58,7 @@ casks=(
   toggl
   tower
   transmission
-  vagrant
   visual-studio
-  virtualbox
   vmware-fusion
 )
 
