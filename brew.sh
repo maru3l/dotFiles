@@ -1,5 +1,9 @@
-# Install Homebrew
+#!/usr/bin/env bash
 
+# Set as admin
+sudo -v
+
+# Install Homebrew
 ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
 brew update
 brew tap homebrew/versions
@@ -11,21 +15,22 @@ brew update
 brew upgrade
 
 # Install packages
-
-apps=(
-  git
-  grep
-  yarn
-  node
-  ruby
-  bash
-  bash-completion2
-  brew-cask
-)
-
-brew install "${apps[@]}"
-
+brew install git
+brew install grep
+brew install yarn
+brew install node
+brew install ruby
+brew install bash
+brew install bash-completion2
+brew install brew-cask-completion
 brew install vim  --with-override-system-vi
+
+# Switch to using brew-installed bash as default shell
+if ! fgrep -q '/usr/local/bin/bash' /etc/shells; then
+  echo '/usr/local/bin/bash' | sudo tee -a /etc/shells;
+  chsh -s /usr/local/bin/bash;
+fi;
+
 
 casks=(
   adobe-creative-cloud
