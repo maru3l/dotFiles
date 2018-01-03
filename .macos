@@ -39,7 +39,7 @@ defaults write com.apple.finder FXEnableExtensionChangeWarning -bool false
 defaults write com.apple.desktopservices DSDontWriteNetworkStores -bool true
 
 # Avoid creating .DS_Store files on network volumes
-defaults write com.apple.desktopservices NewWindowTargetPath -string "file:///Users/maruel/"
+defaults write com.apple.finder NewWindowTargetPath -string "file:///Users/maruel/"
 
 # Disable the warning when changing a file extension
 defaults write com.apple.sidebarlists ShowEjectables -bool false
@@ -65,7 +65,7 @@ defaults write com.apple.dock minimize-to-application -bool true
 defaults write com.apple.dock persistent-apps -array
 
 # Wipe all app icons from the Dock
-defaults write com.apple.dock persistent-other -array
+defaults write com.apple.dock persistent-others -array
 
 # Don’t automatically rearrange Spaces based on most recent use
 defaults write com.apple.dock mru-spaces -bool false
