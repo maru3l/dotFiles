@@ -20,6 +20,7 @@ brew install grep
 brew install yarn
 brew install node
 brew install ruby
+brew install awscli
 brew install bash
 brew install bash-completion2
 brew install brew-cask-completion
