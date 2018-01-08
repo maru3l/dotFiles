@@ -1,5 +1,4 @@
 modules=(
-  atom-beautify
   atom-dark-fusion-syntax
   autocomplete-modules
   autocomplete-paths
@@ -11,6 +10,7 @@ modules=(
   linter-eslint
 	linter-stylelint
   nucleus-dark-ui
+	prettier-atom
   project-manager
   pigments
   teletype
