@@ -47,6 +47,7 @@ casks=(
   hyper
   imageoptim
   java
+  kap
   keeweb
   microsoft-office
   odrive
