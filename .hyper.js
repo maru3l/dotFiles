@@ -112,10 +112,11 @@ module.exports = {
   //   `project#1.0.1`
   plugins: [
     'hyper-ayu-mirage',
-    'hyperline#0.6.1',
+    'hyperline',
     'hyperterm-1password',
     'hypercwd',
-    'hyper-tabs-enhanced'
+    'hyper-tabs-enhanced',
+    'hyper-pane'
   ],
 
   // in development, you can create a directory under
