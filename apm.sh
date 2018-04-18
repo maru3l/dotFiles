@@ -6,6 +6,9 @@ modules=(
   editorconfig
   emmet
   file-icons
+  import-cost-atom
+  language-graphql
+  language-javascript-jsx
   linter
   linter-eslint
 	linter-stylelint
