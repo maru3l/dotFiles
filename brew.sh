@@ -44,6 +44,7 @@ casks=(
   franz
   google-chrome
   google-chrome-canary
+  highsierramediakeyenabler
   hyper
   imageoptim
   java
