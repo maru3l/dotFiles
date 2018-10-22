@@ -9,7 +9,6 @@ function doIt() {
 		--exclude ".DS_Store" \
 		--exclude ".osx" \
 		--exclude ".zshrc" \
-		--exclude "apm.sh" \
 		--exclude "brew.sh" \
 		--exclude "install.sh" \
 		--exclude "install.sh.bak" \
