@@ -15,15 +15,20 @@ brew update
 brew upgrade
 
 # Install packages
-brew install git
-brew install grep
-brew install yarn
-brew install node
-brew install ruby
 brew install awscli
 brew install bash
 brew install bash-completion2
+brew install bash-git-prompt
 brew install brew-cask-completion
+brew install docker-completion
+brew install docker-compose-completion
+brew install git
+brew install grep
+brew install mongodb
+brew install node
+brew install nvm
+brew install ruby
+brew install yarn
 brew install vim  --with-override-system-vi
 
 # Switch to using brew-installed bash as default shell
@@ -37,14 +42,11 @@ casks=(
   adobe-creative-cloud
   aerial
   alfred
-  atom
   bartender
   firefoxdeveloperedition
   fontplop
-  franz
   google-chrome
   google-chrome-canary
-  highsierramediakeyenabler
   hyper
   imageoptim
   java
@@ -52,9 +54,9 @@ casks=(
   keeweb
   microsoft-office
   odrive
-  opera-developer
   postman
   resilio-sync
+  rocket
   sequel-pro
   slack
   sketch
@@ -64,7 +66,6 @@ casks=(
   spectacle
   the-unarchiver
   toggl
-  tower
   transmission
   visual-studio
   vmware-fusion
@@ -84,4 +85,3 @@ brew cask install "${fonts[@]}"
 # Cleanup after installation
 
 brew cleanup
-brew cask cleanup
