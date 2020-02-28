@@ -4,13 +4,11 @@
 sudo -v
 
 # Install Homebrew
-ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+# ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
 brew update
-brew tap homebrew/versions
-brew tap homebrew/dupes
-brew tap caskroom/cask
-brew tap caskroom/versions
-brew tap caskroom/fonts
+brew tap homebrew/cask
+brew tap homebrew/cask-versions
+brew tap homebrew/cask-fonts
 brew update
 brew upgrade
 
@@ -38,7 +36,7 @@ brew install ruby
 brew install serverless
 brew install yarn
 brew install yarn-completion
-brew install vim  --with-override-system-vi
+brew install vim
 brew install webp
 
 # Switch to using brew-installed bash as default shell
@@ -48,57 +46,49 @@ if ! fgrep -q '/usr/local/bin/bash' /etc/shells; then
 fi;
 
 
-casks=(
-  adobe-creative-cloud
-  aerial
-  alfred
-  balenaetcher
-  bartender
-  caldigit-thunderbolt-charging
-  firefoxdeveloperedition
-  fontplop
-  google-chrome
-  google-chrome-canary
-  handbrake
-  hyper
-  # iina
-  imageoptim
-  jitsi-meet
-  kap
-  microsoft-office
-  # odrive
-  postman
-  rectangle
-  # resilio-sync
-  riot
-  # rocket
-  sequel-pro
-  slack
-  sketch
-  skyfonts
-  skype
-  slack
-  # steam
-  the-unarchiver
-  toggldesktop
-  tor-browser
-  transmission
-  visual-studio-code
-  vlc
-  vmware-fusion
-)
 
-brew cask install "${casks[@]}"
+
+brew cask install adobe-creative-cloud
+brew cask install 1password
+brew cask install aerial
+brew cask install alfred
+brew cask install balenaetcher
+brew cask install caldigit-thunderbolt-charging
+brew cask install cyberduck
+brew cask install firefox-developer-edition
+brew cask install fontplop
+brew cask install google-chrome-dev
+brew cask install handbrake
+brew cask install hiddenbar
+brew cask install hyper
+brew cask install imageoptim
+brew cask install jitsi-meet
+brew cask install kap
+brew cask install microsoft-office
+brew cask install postman
+brew cask install rectangle
+brew cask install riot
+brew cask install sequel-pro
+brew cask install sketch
+brew cask install skyfonts
+brew cask install slack
+brew cask install the-unarchiver
+brew cask install toggl
+brew cask install tor-browser
+brew cask install transmission
+brew cask install visual-studio-code
+brew cask install vlc
+brew cask install vmware-fusion
+brew cask install zeplin
+
+# brew cask install iina
+# brew cask install rocket
 
 # Install fonts
 
-fonts=(
-  font-hack
-  font-fira-code
-  font-roboto-mono
-)
-
-brew cask install "${fonts[@]}"
+brew cask install font-fira-code
+brew cask install font-hack
+brew cask install font-roboto-mono
 
 # Cleanup after installation
 
