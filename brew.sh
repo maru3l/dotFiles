@@ -9,6 +9,7 @@ brew update
 brew tap homebrew/cask
 brew tap homebrew/cask-versions
 brew tap homebrew/cask-fonts
+brew tap services
 brew update
 brew upgrade
 
@@ -20,8 +21,7 @@ brew install bash-git-prompt
 brew install brew-cask-completion
 brew install docker
 brew install docker-compose
-brew install docker-completion
-brew install docker-compose-completion
+brew install docker-machine
 brew install fish
 brew install gatsby-cli
 brew install git
@@ -55,6 +55,7 @@ brew cask install alfred
 brew cask install balenaetcher
 brew cask install caldigit-thunderbolt-charging
 brew cask install cyberduck
+brew cask install docker
 brew cask install firefox-developer-edition
 brew cask install fontplop
 brew cask install google-chrome-dev
@@ -78,7 +79,7 @@ brew cask install tor-browser
 brew cask install transmission
 brew cask install visual-studio-code
 brew cask install vlc
-brew cask install vmware-fusion
+brew cask install vmware-fusion8
 brew cask install zeplin
 
 # brew cask install iina
