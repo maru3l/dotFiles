@@ -3,3 +3,36 @@
 ###############################################################################
 
 defaults write http://com.apple.dt.Xcode ShowBuildOperationDuration YES
+
+
+###############################################################################
+# Dock, Dashboard, and hot corners                                            #
+###############################################################################
+
+# Change minimize/maximize window effect
+defaults write com.apple.dock mineffect -string "scale"
+
+# Don’t show recent applications in Dock
+defaults write com.apple.dock show-recents -bool false
+
+# Minimize windows into their application’s icon
+defaults write com.apple.dock minimize-to-application -bool true
+
+# Wipe all (default) app icons from the Dock
+# This is only really useful when setting up a new Mac, or if you don’t use
+# the Dock to launch apps.
+defaults write com.apple.dock persistent-apps -array
+
+# Show only open applications in the Dock
+defaults write com.apple.dock static-only -bool true
+
+###############################################################################
+# Kill affected applications                                                  #
+###############################################################################
+
+for app in "Dock" /
+    "xcode"; do
+	killall "${app}" &> /dev/null
+done
+echo "Done. Note that some of these changes require a logout/restart to take effect."
+
