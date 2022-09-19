@@ -1,0 +1,15 @@
+# Disable the blank line at the start of the prompt
+add_newline = false
+
+command_timeout=1000
+
+[line_break]
+disabled = true
+
+[directory]
+truncate_to_repo = false
+truncation_length = 1
+fish_style_pwd_dir_length = 1
+
+[ruby]
+disabled = true
