@@ -1,0 +1,51 @@
+# Rebind
+alias ls='lsd'
+alias ll='lsd -la'
+alias cat='bat'
+alias top='htop'
+
+# generic
+alias zshrc="vim ~/.zshrc"
+alias resource="clear; source ~/.zshrc"
+
+# JAVA
+alias java8="sdk use java 8.0.322-zulu"
+alias java11="sdk use java 11.0.15-zulu"
+
+# ADB commands
+alias adbd="adb disconnect"
+alias adbt="adb shell input text"
+alias adbe="adb shell input keyevent 66"
+alias adbl="adb devices -l"
+alias adbreboot="adb shell reboot"
+alias adbinfo="adb shell getprop | grep 'model\|version.sdk\|manufacturer\|hardware\|platform\|revision\|serialno\|product.name\|brand'"
+alias adbevent="adb shell getevent"
+
+# ADB Apps
+alias notifications="adb shell am start -a com.android.tv.action.OPEN_NOTIFICATIONS_PANEL"
+alias settings="adb shell am start -a android.settings.SETTINGS"
+alias wifi="adb shell am start -a android.settings.WIFI_SETTINGS"
+alias talkbackon="adb shell settings put secure enabled_accessibility_services com.google.android.marvin.talkback/com.google.android.marvin.talkback.TalkBackService"
+alias talkbackoff="adb shell settings put secure enabled_accessibility_services -"
+
+# ADB Fibe ATV
+alias cleardata="adb shell pm clear com.quickplay.android.bellmediaplayer"
+alias killfibe="adb shell am force-stop com.quickplay.android.bellmediaplayer"
+alias adminpanel="adb shell am start -a android.intent.action.VIEW -d 'fonsetv://adminPanel?pin=2014'"
+alias canary="adb shell am start -a android.intent.action.VIEW -d 'fonsetv://run/environment/set/TV_CANARY'"
+alias staging="adb shell am start -a android.intent.action.VIEW -d 'fonsetv://run/environment/set/TV_STAGING'"
+alias production="adb shell am start -a android.intent.action.VIEW -d 'fonsetv://run/environment/set/TV_PRODUCTION'"
+alias lab1="adb shell am start -a android.intent.action.VIEW -d 'fonsetv://run/environment/set/TV_KARGO_LAB_STAGE_1'"
+alias lab2="adb shell am start -a android.intent.action.VIEW -d 'fonsetv://run/environment/set/TV_KARGO_LAB_STAGE_2'"
+alias lab3="adb shell am start -a android.intent.action.VIEW -d 'fonsetv://run/environment/set/TV_KARGO_LAB_STAGE_3'"
+
+# Remote
+alias rback="adb shell input keyevent KEYCODE_BACK"
+alias rdown="adb shell input keyevent KEYCODE_DPAD_DOWN"
+alias rup="adb shell input keyevent KEYCODE_DPAD_UP"
+alias rleft="adb shell input keyevent KEYCODE_DPAD_LEFT"
+alias rright="adb shell input keyevent KEYCODE_DPAD_RIGHT"
+alias rcenter="adb shell input keyevent KEYCODE_DPAD_CENTER"
+alias rhome="adb shell input keyevent KEYCODE_HOME"
+alias rsearch="adb shell input keyevent KEYCODE_SEARCH"
+alias rassist="adb shell input keyevent KEYCODE_ASSIST"
