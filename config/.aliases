@@ -1,3 +1,19 @@
+# Hidden files
+alias show="defaults write com.apple.finder AppleShowAllFiles -boolean true ; killall Finder ; say Hidden files is now visible ;"
+alias hide="defaults write com.apple.finder AppleShowAllFiles -boolean false ; killall Finder ; say Hidden files is now hidden in the hole ;"
+
+# Flush Directory Service cache
+alias flush="sudo dscacheutil -flushcache;sudo killall -HUP mDNSResponder; say cache flushed"
+
+# View HTTP traffic
+alias sniff="sudo ngrep -d 'en1' -t '^(GET|POST) ' 'tcp and port 80'"
+alias httpdump="sudo tcpdump -i en1 -n -s 0 -w - | grep -a -o -E \"Host\: .*|GET \/.*\""
+
+# IP addresses
+alias ip="dig +short myip.opendns.com @resolver1.opendns.com"
+alias localip="ipconfig getifaddr en0"
+alias ips="ifconfig -a | grep -o 'inet6\? \(addr:\)\?\s\?\(\(\([0-9]\+\.\)\{3\}[0-9]\+\)\|[a-fA-F0-9:]\+\)' | awk '{ sub(/inet6? (addr:)? ?/, \"\"); print }'"
+
 # Rebind
 alias ls='lsd'
 alias ll='lsd -la'
@@ -49,3 +65,21 @@ alias rcenter="adb shell input keyevent KEYCODE_DPAD_CENTER"
 alias rhome="adb shell input keyevent KEYCODE_HOME"
 alias rsearch="adb shell input keyevent KEYCODE_SEARCH"
 alias rassist="adb shell input keyevent KEYCODE_ASSIST"
+
+# GIT
+alias g="git"
+alias ga="git add"
+alias gaa="git add ."
+alias gac="git add -A && git commit"
+alias gc="git commit"
+alias gf="git fetch"
+alias gp="git push"
+alias gpl="git pull"
+alias gco="git checkout"
+alias gb="git branch"
+alias gbd="git branch -D"
+alias gs="git status -sb"
+alias gl="git log"
+alias gcom="git checkout master"
+alias gcod="git checkout develop"
+alias nah="git reset --hard && git clean -df"
