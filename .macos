@@ -24,11 +24,36 @@ defaults write com.apple.LaunchServices LSQuarantine -bool false
 # Trackpad, mouse, keyboard, Bluetooth accessories, and input                 #
 ###############################################################################
 
+# Disable press-and-hold for keys in favor of key repeat
+defaults write NSGlobalDomain ApplePressAndHoldEnabled -bool false
+
+# Set a blazingly fast keyboard repeat rate
+defaults write NSGlobalDomain KeyRepeat -int 1
+defaults write NSGlobalDomain InitialKeyRepeat -int 10
+
+###############################################################################
+# Safari                                                                      #
+###############################################################################
+
+# Set Web Search engine to DuckDuckGo
+# defaults write NSGlobalDomain NSPreferredWebServices '{ "NSWebServicesProviderWebSearch" = { "NSDefaultDisplayName" = "DuckDuckGo"; "NSProviderIdentifier" = "com.duckduckgo"; }; }';
+
+###############################################################################
+# Finder                                                                      #
+###############################################################################
+
+# Use list view in all Finder windows by default
+# Four-letter codes for the other view modes: `icnv`, `clmv`, `glyv`, `Nlsv`
+defaults write com.apple.finder FXPreferredViewStyle -string "clmv"
+
+# Show the ~/Library folder
+chflags nohidden ~/Library
+
 ###############################################################################
 # XCODE                                                                       #
 ###############################################################################
 
-defaults write http://com.apple.dt.Xcode ShowBuildOperationDuration YES
+defaults write com.apple.dt.Xcode ShowBuildOperationDuration YES
 
 
 ###############################################################################
@@ -52,11 +77,16 @@ defaults write com.apple.dock persistent-apps -array
 # Show only open applications in the Dock
 defaults write com.apple.dock static-only -bool true
 
+# Auto hide Dock
+defaults write com.apple.dock "autohide" -bool "true"
+
 ###############################################################################
 # Kill affected applications                                                  #
 ###############################################################################
 
-for app in "Dock" /
+for app in "Dock" \
+    "Finder" \
+    "Safari" \
     "xcode"; do
 	killall "${app}" &> /dev/null
 done
