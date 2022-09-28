@@ -10,6 +10,7 @@ brew "lsd"
 brew "httpie"
 brew "htop"
 brew "mas"
+brew "mitmproxy"
 brew "nvm"
 brew "rbenv"
 brew "starship"
@@ -18,10 +19,10 @@ brew "zsh-autosuggestions"
 brew "zsh-completions"
 brew "zsh-syntax-highlighting"
 
-
 cask "1password"
 cask "insomnia"
 cask "1password-cli"
+cask "android-platform-tools"
 cask "android-studio"
 cask "beekeeper-studio"
 # cask "fig" TODO: Evaluate if it's necessary
@@ -53,4 +54,6 @@ cask "the-unarchiver"
 cask "visual-studio-code"
 cask "vlc"
 
+mas "1Password for Safari", id: 1569813296
+mas "Harvest", id: 506189836
 mas "Hidden Bar", id: 1452453066
