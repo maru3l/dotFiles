@@ -1,6 +1,7 @@
 [user]
 	name = Marc-Antoine Ruel
 	email = hello@marcantoineruel.com
+	signingkey = ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAINYwtSawp0tHO+7iws+dvP4kadd6gCAfOzLFIvFDboZW
 [push]
 	default = current
 [filter "lfs"]
@@ -31,3 +32,10 @@
 [mergetool "sourcetree"]
 	cmd = /Applications/Sourcetree.app/Contents/Resources/opendiff-w.sh \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
 	trustExitCode = true
+[gpg]
+	format = ssh
+[gpg "ssh"]
+	program = /Applications/1Password.app/Contents/MacOS/op-ssh-sign
+[commit]
+	gpgsign = true
+	template = /Users/maruel/.stCommitMsg
