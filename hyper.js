@@ -95,7 +95,7 @@ module.exports = {
         // Cygwin
         // - Example: `C:\\cygwin64\\bin\\bash.exe`
         scrollback: 10000,
-        shell: '',
+        shell: '/opt/homebrew/bin/fish',
         // for setting shell arguments (i.e. for using interactive shellArgs: `['-i']`)
         // by default `['--login']` will be used
         shellArgs: ['--login'],
