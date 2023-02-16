@@ -13,3 +13,7 @@ alias top='htop'
 # JAVA
 alias java8="sdk use java 8.0.322-zulu"
 alias java11="sdk use java 11.0.15-zulu"
+
+# ASDF
+echo -e "\nsource "(brew --prefix asdf)"/libexec/asdf.fish" >> ~/.config/fish/config.fish
+source /opt/homebrew/opt/asdf/libexec/asdf.fish

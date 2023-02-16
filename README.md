@@ -11,6 +11,7 @@
 - `.config/` `ln -s ~/Sites/dotFiles/config ~/.config/`
 - `.gitconfig` `ln -s ~/Sites/dotFiles/.gitconfig ~/.gitconfig`
 - `.gitignore_global` `ln -s ~/Sites/dotFiles/.gitignore_global ~/.gitignore_global`
+- `.asdfrc` `ln -s ~/Sites/dotFiles/.asdfrc ~/.asdfrc`
 
 1 - Install Brew
 

@@ -3,6 +3,7 @@ tap "homebrew/cask-fonts"
 tap "homebrew/cask-versions"
 tap "homebrew/core"
 
+brew "asdf"
 brew "awscli"
 brew "bat"
 brew "elixir"
